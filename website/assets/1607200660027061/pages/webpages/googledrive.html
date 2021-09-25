@@ -211,3 +211,14 @@ function getButton(){
   };
 //]]>
 </script>
+<script>function getButton(){
+    var dataID = document.getElementById("driveID").value;
+    if (dataID != ""){
+      var input = dataID.split("https://drive.google.com/file/d/").join("").replace("/view?usp=sharing", "");
+      var output = "https://drive.google.com/uc?export=download&id="+input;
+      document.getElementById("output").value = output;
+    } else {
+      document.getElementById("driveID").value = "url Gdrive belum diisi";
+    }
+  }
+  document.getElementById("get-button").onclick = getButton;</script>
