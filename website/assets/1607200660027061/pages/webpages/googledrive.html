@@ -231,8 +231,8 @@ function getButton(){
             : -1 !== input.indexOf("spreadsheet")
             ? (output = output.replace("$type", "spreadsheets").split("pdf").join("xlsx"))
             : -1 !== input.indexOf("presentation")
-            ? (output = "https://sahrul.eu.org/cdn-gle/googledrive?=" + (driveID = input.slice(textd + 2, textEdit)))
-            : ((textEdit = input.indexOf("/view")), (output = "https://sahrul.eu.org/cdn-gle/googledrive" + (driveID = input.slice(textd + 2, textEdit))));
+            ? (output = "https://drive.google.com/uc?export=download&id=" + (driveID = input.slice(textd + 2, textEdit)))
+            : ((textEdit = input.indexOf("/view")), (output = "https://sahrul.eu.org/cdn-gle/googledrive?=" + (driveID = input.slice(textd + 2, textEdit))));
       document.getElementById("output").value = output;
       document.querySelector(".input").style.display = "none";
       document.querySelector(".output").style.display = "block";
@@ -264,7 +264,7 @@ function getButton(){
     var dataID = document.getElementById("driveID").value;
     if (dataID != ""){
       var input = dataID.split("https://drive.google.com/file/d/").join("").replace("/view?usp=sharing", "");
-      var output = "https://sahrul.eu.org/cdn-gle/googledrive"+input;
+      var output = "https://sahrul.eu.org/cdn-gle/googledrive?="+input;
       document.getElementById("output").value = output;
     } else {
       document.getElementById("driveID").value = "url Gdrive belum diisi";
@@ -283,6 +283,6 @@ var cekTitle=document.querySelector(".post-video .post-title.entry-title");if(nu
 </script>
 <script>
 //<![CDATA[
-function $(e){return document.getElementById(e)}function select(e){return document.querySelector(e)}function getButton(){var e=$("driveID").value;if(-1!=e.indexOf("google.com")){var t=e.indexOf("d/"),o=e.indexOf("/edit"),n=e.slice(t+2,o),i="https://docs.google.com/$type/d/"+n+"/export?format=pdf";-1!==e.indexOf("document")?i=i.replace("$type","document").split("pdf").join("docx"):-1!==e.indexOf("spreadsheet")?i=i.replace("$type","spreadsheets").split("pdf").join("xlsx"):-1!==e.indexOf("presentation")?i="https://sahrul.eu.org/cdn-gle/googledrive"+(n=e.slice(t+2,o)):(o=e.indexOf("/view"),i="https://sahrul.eu.org/cdn-gle/googledrive"+(n=e.slice(t+2,o))),$("output").value=i,select(".input").style.display="none",select(".output").style.display="block",select(".tombol-copy-reset").style.display="block",$("get-button").style.display="none"}else $("driveID").value="Url tidak sesuai format"}function copy(){$("output").select(),document.execCommand("copy"),$("text-keterangan").innerHTML="Link berhasil disalin",$("text-keterangan").style.margin="10px 0"}function download(){var e=$("output").value;window.open(e,"_blank")}function reset(){window.location.href=window.location.href}window.onload=function(){$("driveID").focus(),$("get-button").onclick=getButton,$("copy").onclick=copy,$("download").onclick=download,$("reset").onclick=reset};
+function $(e){return document.getElementById(e)}function select(e){return document.querySelector(e)}function getButton(){var e=$("driveID").value;if(-1!=e.indexOf("google.com")){var t=e.indexOf("d/"),o=e.indexOf("/edit"),n=e.slice(t+2,o),i="https://docs.google.com/$type/d/"+n+"/export?format=pdf";-1!==e.indexOf("document")?i=i.replace("$type","document").split("pdf").join("docx"):-1!==e.indexOf("spreadsheet")?i=i.replace("$type","spreadsheets").split("pdf").join("xlsx"):-1!==e.indexOf("presentation")?i="https://sahrul.eu.org/cdn-gle/googledrive?="+(n=e.slice(t+2,o)):(o=e.indexOf("/view"),i="https://sahrul.eu.org/cdn-gle/googledrive?="+(n=e.slice(t+2,o))),$("output").value=i,select(".input").style.display="none",select(".output").style.display="block",select(".tombol-copy-reset").style.display="block",$("get-button").style.display="none"}else $("driveID").value="Url tidak sesuai format"}function copy(){$("output").select(),document.execCommand("copy"),$("text-keterangan").innerHTML="Link berhasil disalin",$("text-keterangan").style.margin="10px 0"}function download(){var e=$("output").value;window.open(e,"_blank")}function reset(){window.location.href=window.location.href}window.onload=function(){$("driveID").focus(),$("get-button").onclick=getButton,$("copy").onclick=copy,$("download").onclick=download,$("reset").onclick=reset};
 //]]>
 </script>
